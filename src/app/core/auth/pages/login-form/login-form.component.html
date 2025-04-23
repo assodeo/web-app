@@ -1,0 +1,48 @@
+<div class="form-container">
+  <div class="form-card">
+    <h1 translate class="form-title">login.title</h1>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="form">
+      @if (invalidCredentials) {
+        <div translate class="form-error">login.error.invalid-credentials</div>
+      }
+
+      <div class="form-content">
+        <app-form-field
+          id="username"
+          label="login.email"
+          type="email"
+          autocomplete="email"
+          autofocus="true"
+          showAsterisk="false"
+          [control]="form.controls['username']"
+          [errors]="{
+            'required,email': 'login.error.invalid-email' | translate
+          }"
+        />
+
+        <app-form-field
+          id="password"
+          label="login.password"
+          type="password"
+          autocomplete="current-password"
+          showAsterisk="false"
+          [control]="form.controls['password']"
+          [errors]="{
+            required: 'login.error.required-password' | translate
+          }"
+        />
+      </div>
+
+      <app-form-button
+        title="login.submit"
+        [loading]="isSubmitting"
+        [disabled]="form.invalid"
+      />
+    </form>
+
+    <hr class="form-divider" />
+
+    <a translate routerLink="/register" class="form-footer-link">login.footer</a>
+  </div>
+</div>

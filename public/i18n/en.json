@@ -1,5 +1,41 @@
 {
   "app": {
     "name": "Assodeo"
+  },
+  "error": {
+    "internal": "An error occurred. Please try again later",
+    "expired": "Your session has expired. Please log in again"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email address",
+    "password": "Password",
+    "submit": "Log in",
+    "footer": "I don't have an account yet",
+    "error": {
+      "invalid-credentials": "Invalid credentials",
+      "invalid-email": "Please enter a valid email address",
+      "required-password": "Please enter a password"
+    }
+  },
+  "register": {
+    "title": "Register",
+    "first-name": "First name",
+    "last-name": "Last name",
+    "email": "Email address",
+    "password": {
+      "label": "Password",
+      "min-length": "At least {{characters}} characters",
+      "pattern": "At least one letter, one number, and one special character"
+    },
+    "submit": "Sign up",
+    "footer": "I already have an account",
+    "error": {
+      "required-first-name": "Please enter a first name",
+      "required-last-name": "Please enter a last name",
+      "invalid-email": "Please enter a valid email address",
+      "email-already-in-use": "This email address is already in use"
+    },
+    "success": "Your account has been successfully created. You can now log in"
   }
 }
