@@ -14,5 +14,5 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot): boolean
   const redirect = route.url.join('/');
   void router.navigate(['/login'], { queryParams: { redirect } });
 
-  return true;
+  return false;
 };
