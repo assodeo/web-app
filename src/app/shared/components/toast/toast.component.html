@@ -1,0 +1,5 @@
+<div role="alert" aria-live="assertive" class="toast" [class]="toast.type | lowercase">
+  <span [translate]="toast.messageKey"></span>
+  <button (click)="dismiss()" aria-label="Dismiss toast" class="toast-dismiss-button">&times;</button>
+  <div [style.animation-duration]="toast.duration + 'ms'" class="toast-progress"></div>
+</div>

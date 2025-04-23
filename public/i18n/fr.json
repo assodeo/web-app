@@ -1,5 +1,41 @@
 {
   "app": {
     "name": "Assodeo"
+  },
+  "error": {
+    "internal": "Une erreur est survenue. Veuillez réessayer plus tard",
+    "expired": "Votre session a expiré. Veuillez vous reconnecter"
+  },
+  "login": {
+    "title": "Connexion",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "footer": "Je n'ai pas encore de compte",
+    "error": {
+      "invalid-credentials": "Identifiants invalides",
+      "invalid-email": "Veuillez entrer une adresse e-mail valide",
+      "required-password": "Veuillez entrer un mot de passe"
+    }
+  },
+  "register": {
+    "title": "Inscription",
+    "first-name": "Prénom",
+    "last-name": "Nom de famille",
+    "email": "Adresse e-mail",
+    "password": {
+      "label": "Mot de passe",
+      "min-length": "Au moins {{characters}} caractères",
+      "pattern": "Au moins une lettre, un chiffre et un caractère spécial"
+    },
+    "submit": "S'inscrire",
+    "footer": "J'ai déjà un compte",
+    "error": {
+      "required-first-name": "Veuillez entrer un prénom",
+      "required-last-name": "Veuillez entrer un nom de famille",
+      "invalid-email": "Veuillez entrer une adresse e-mail valide",
+      "email-already-in-use": "Cette adresse e-mail est déjà utilisée"
+    },
+    "success": "Votre compte a bien été créé. Vous pouvez maintenant vous connecter"
   }
 }

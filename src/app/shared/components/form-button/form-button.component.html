@@ -1,0 +1,13 @@
+<button
+  type="submit"
+  [disabled]="disabled || loading"
+  class="form-button"
+  [attr.aria-busy]="loading"
+  [attr.aria-label]="loading ? 'loading' : (title | translate)"
+>
+  @if (loading) {
+    <span class="form-button-loader" aria-hidden="true"></span>
+  } @else {
+    <span [translate]="title"></span>
+  }
+</button>

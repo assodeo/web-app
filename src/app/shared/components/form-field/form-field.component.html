@@ -1,0 +1,23 @@
+<div class="form-group">
+  <label [for]="id" [translate]="label" class="form-label" [class.required]="required && showAsterisk"></label>
+  <input
+    [id]="id"
+    [type]="type"
+    [autocomplete]="autocomplete"
+    [placeholder]="label | translate"
+    [required]="required"
+    [formControl]="_control"
+    class="form-control"
+  >
+  @if ((_control.dirty && _control.invalid) || fixedErrors) {
+    <div class="form-feedbacks">
+      @for (error of _errors | keyvalue; track $index) {
+        @if (hasError(error.key) || fixedErrors) {
+          <small class="form-feedback" [class.is-invalid]="hasError(error.key)" [class.is-valid]="!hasError(error.key)">
+            {{ error.value }}
+          </small>
+        }
+      }
+    </div>
+  }
+</div>

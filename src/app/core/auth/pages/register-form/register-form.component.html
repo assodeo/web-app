@@ -1,0 +1,68 @@
+<div class="form-container">
+  <div class="form-card">
+    <h1 class="form-title">{{ 'register.title' | translate }}</h1>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="form">
+      <div class="form-content">
+        <div class="form-row">
+          <app-form-field
+            id="firstName"
+            label="register.first-name"
+            type="text"
+            autocomplete="given-name"
+            [control]="form.controls['firstName']"
+            [errors]="{
+              required: 'register.error.required-first-name' | translate
+            }"
+          />
+
+          <app-form-field
+            id="lastName"
+            label="register.last-name"
+            type="text"
+            autocomplete="family-name"
+            [control]="form.controls['lastName']"
+            [errors]="{
+              required: 'register.error.required-last-name' | translate
+            }"
+          />
+        </div>
+
+        <app-form-field
+          id="username"
+          label="register.email"
+          type="email"
+          autocomplete="email"
+          [control]="form.controls['username']"
+          [errors]="{
+            'required,email': 'register.error.invalid-email' | translate,
+            usernameAlreadyExists: 'register.error.email-already-in-use' | translate
+          }"
+        />
+
+        <app-form-field
+          id="password"
+          label="register.password.label"
+          type="password"
+          autocomplete="new-password"
+          fixedErrors="true"
+          [control]="form.controls['password']"
+          [errors]="{
+            minlength: 'register.password.min-length' | translate:{characters: MIN_PASSWORD_LENGTH},
+            pattern: 'register.password.pattern' | translate
+          }"
+        />
+      </div>
+
+      <app-form-button
+        title="register.submit"
+        [loading]="isSubmitting"
+        [disabled]="form.invalid"
+      />
+    </form>
+
+    <hr class="form-divider" />
+
+    <a translate routerLink="/login" class="form-footer-link">register.footer</a>
+  </div>
+</div>
